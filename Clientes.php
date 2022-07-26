@@ -4,7 +4,6 @@ namespace App\Http\Livewire;
 
 use App\Models\categoria;
 use App\Models\cliente;
-use App\Models\Count;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -17,7 +16,6 @@ class Clientes extends Component
     public function mount(){
         $this->pageTitle = 'Listado';
         $this->componentName = 'Clientes';
-        
     }
 
     public function paginationView()
@@ -33,21 +31,9 @@ class Clientes extends Component
             $data = cliente::orderBy('id', 'desc')->paginate($this->pagination);
         }
 
-        $cont = Count::find(1);
-
-        $dataCount = $this->incrementCount($cont->contador);
-        //dd($data);
-
-        $this->saveCount($dataCount);
-
-        return view('livewire.cliente.clientes', ['clientes' => $data, 'contador' => $dataCount])
+        return view('livewire.cliente.clientes', ['clientes' => $data])
             ->extends('layouts.theme.app')
             ->section('content');
-    }
-
-    function incrementCount($var){
-        $count = $var + 1;
-        return $count;
     }
 
     public function Edit(cliente $record){
@@ -121,14 +107,6 @@ class Clientes extends Component
         $categoria->save();
         $this->resetUI();
         $this->emit('cliente-updated', 'Cliente actualizada!');
-    }
-
-    function saveCount($con){
-        $c = Count::find(1);
-        $c->update([
-            'contador' => $con
-        ]);
-        $c->save();
     }
 
     public function resetUI(){

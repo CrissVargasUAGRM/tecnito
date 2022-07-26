@@ -76,6 +76,16 @@
         box-shadow: none;
         border-radius: 30px;
     }
+
+    .oscuro{
+        background-color: #1f1f1f;
+        color: #ffffff !important;
+    }
+
+    .claro{
+        background-color: #868686 !important;
+        color: white;
+    }
 </style>
 
 @livewireStyles

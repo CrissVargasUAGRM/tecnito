@@ -60,5 +60,8 @@
                 </div>
             </li>
         </ul>
+        
+        <button type="button" class="btn btn-success mr-3" onclick="cambiarModo()">Oscuro / Claro</button>
+
     </header>
 </div>

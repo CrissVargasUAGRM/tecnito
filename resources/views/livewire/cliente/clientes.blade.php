@@ -52,6 +52,9 @@
                     <li>
                         <a href="{{url('telefonoclientes')}}" class="btn btn-primary" data-active="true">Telelfono</a>
                     </li>
+                    <li>
+                        <h4>Contador de pagina: {{$contador}}</h4>
+                    </li>
                 </ul>
             </div>
         </div>

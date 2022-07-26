@@ -29,6 +29,20 @@
            pos: 'top-right '
         });
     }
+
+    function cambiarModo(){
+        var cuerpo = document.body;
+        cuerpo.classList.toggle("oscuro");
+
+        var header = document.getElementsByClassName("header navbar navbar-expand-sm")[0];
+        header.classList.toggle("oscuro");
+        
+
+        var nave = document.getElementById("compactSidebar");
+        nave.classList.toggle("claro");
+        console.log(nave);
+    }
 </script>
+    
 
 @livewireScripts
